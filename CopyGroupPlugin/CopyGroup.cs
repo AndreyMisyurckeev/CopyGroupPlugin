@@ -67,10 +67,16 @@ namespace CopyGroupPlugin
                 Room room = e as Room;
                 if (room != null)
                 {
-                    return room;
+                    if (room.IsPointInRoom(point))
+                    {
+                        return room;
+                    }
                 }
             }
             return null;
+            {
+
+            }
         }
     }
     public class GroupPickFilter : ISelectionFilter
